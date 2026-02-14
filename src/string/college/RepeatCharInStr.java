@@ -1,4 +1,4 @@
-package string;
+package string.college;
 
 public class RepeatCharInStr {
     public static void main(String[] args) {
@@ -9,8 +9,8 @@ public class RepeatCharInStr {
         }
 
         for (int i = 0; i <arr.length ; i++) {
-           if (arr[i]>0){
-               System.out.print(arr[i]+" ");
+           if (arr[i]>1){
+               System.out.print(((char)(i+'a'))+" ");
            }
         }
     }

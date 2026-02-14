@@ -1,3 +1,5 @@
+package basicPrograms;
+
 import java.util.Scanner;
 
 public class p2 {

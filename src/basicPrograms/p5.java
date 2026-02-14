@@ -1,3 +1,5 @@
+package basicPrograms;
+
 import java.util.*;
 public class p5 {
 public static int doSomething(int n) {

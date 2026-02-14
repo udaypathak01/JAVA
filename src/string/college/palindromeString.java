@@ -1,4 +1,4 @@
-package string;
+package string.college;
 
 import java.util.*;
 
