@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class UnionOf2SortedArrays {
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4, 5};
-        int[] b = {1, 2, 3, 6, 7};
-        union(a,b);
+        int[] b = {1, 2, 3, 6, 7, 7, 7, 7};
+        union(a, b);
 
     }
 
@@ -30,16 +30,24 @@ public class UnionOf2SortedArrays {
                 k++;
             }
         }
-        while (i != a.length) {
-            arr.add(k, a[i]);
+
+        // Remaining elements of a
+        while (i < a.length) {
+            if (arr.get(arr.size() - 1) != a[i]) {
+                arr.add(a[i]);
+            }
             i++;
-            k++;
         }
-        while (j != b.length) {
-            arr.add(k, b[j]);
+
+        // Remaining elements of b
+        while (j < b.length) {
+            if (arr.get(arr.size() - 1) != b[j]) {
+                arr.add(b[j]);
+            }
             j++;
-            k++;
         }
+
+
         for (int l = 0; l < arr.size(); l++) {
             System.out.print(arr.get(l) + " ");
         }
