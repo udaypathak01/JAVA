@@ -1,31 +1,42 @@
 package OOPS;
 
-public class animal {
-    public static class cat {
-        void print() {
-            System.out.println("meow meow");
-        }
-    }
+public class Student {
+    static class McaStudent {
 
-    public static class dog {
-        void print() {
-            System.out.println("bhao bhao");
-        }
-    }
+        String name;
+        int age;
+        String section;
 
-    public static class lion {
-        void print() {
-            System.out.println("ghrrr ghrrr");
+        //this is a default constructor for preventing the automatically initializing the varibles by java
+        McaStudent() {
+            this("default name", "default section");
+            //use to invoke the parameterized constructor to set default values
         }
+
+
+
+        McaStudent(String name, String section) {
+            this.name = name;
+            this.section = section;
+            System.out.println(this.name + " studing in mca department in " + this.section + " section.");
+        }
+
+        McaStudent(String name, int age, String section) {
+            this.name = name;
+            this.age = age;
+            this.section = section;
+            System.out.println(this.name + " studing in mca department in " + this.age + "is my age" + " " + this.section + " section.");
+        }
+
     }
 
     public static void main(String[] args) {
-        cat c = new cat();
-        dog d = new dog();
-        lion l = new lion();
+        McaStudent uday = new McaStudent("uday pathak", "A3");
+        McaStudent shivam = new McaStudent("shivam sharma", 22, "A3");
+        McaStudent random = new McaStudent();
 
-        c.print();
-        d.print();
-        l.print();
+        McaStudent temp =shivam;
+        System.out.println(temp.name+ temp.section);
     }
+
 }
