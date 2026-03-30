@@ -1,42 +1,24 @@
-package OOPS;
+package OOPS.temp;
 
 public class Student {
-    static class McaStudent {
 
-        String name;
-        int age;
-        String section;
+    String name;
+    int age;
+    Boolean married;
+    String course;
+    static int population = 0;//static variable
 
-        //this is a default constructor for preventing the automatically initializing the varibles by java
-        McaStudent() {
-            this("default name", "default section");
-            //use to invoke the parameterized constructor to set default values
-        }
-
-
-
-        McaStudent(String name, String section) {
-            this.name = name;
-            this.section = section;
-            System.out.println(this.name + " studing in mca department in " + this.section + " section.");
-        }
-
-        McaStudent(String name, int age, String section) {
-            this.name = name;
-            this.age = age;
-            this.section = section;
-            System.out.println(this.name + " studing in mca department in " + this.age + "is my age" + " " + this.section + " section.");
-        }
-
+    static void print(){
+        System.out.println("hello");
     }
 
-    public static void main(String[] args) {
-        McaStudent uday = new McaStudent("uday pathak", "A3");
-        McaStudent shivam = new McaStudent("shivam sharma", 22, "A3");
-        McaStudent random = new McaStudent();
-
-        McaStudent temp =shivam;
-        System.out.println(temp.name+ temp.section);
+    Student(String name, int age, Boolean married, String course) {
+        this.name = name;
+        this.age = age;
+        this.married = married;
+        this.course = course;
+        Student.population += 1;
+        print();
+        System.out.println(this.name + " " + this.age + " " + this.married + " " + this.course + " " + Student.population);
     }
-
 }
