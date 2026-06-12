@@ -28,18 +28,19 @@ public class Max_SubArray_Sum {
             sum+=arr[j];
             if (window<k){
                 j++;
-            }else if(window==k){
-                max_sum=Math.max(sum,max_sum);
+            }
+            if(window==k){
                 if(sum>max_sum){
                     idx=i;
                     idx2=j;
                 }
+                max_sum=Math.max(sum,max_sum);
                 sum-=arr[i];
                 i++;
                 j++;
             }
         }
-
+        System.out.println("start: "+idx+" end: "+idx2);
         return max_sum;
     }
 }
