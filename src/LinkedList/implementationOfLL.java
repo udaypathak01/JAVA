@@ -14,6 +14,7 @@ public class implementationOfLL {
     public static class linkedList {
         node head = null;
         node tail = null;
+        int size = 0;
 
         void add(int value) {
             node newNode = new node(value);
@@ -24,6 +25,7 @@ public class implementationOfLL {
                 tail.next = newNode;
                 tail = tail.next;
             }
+            size++;
         }
 
         void display() {
@@ -34,16 +36,6 @@ public class implementationOfLL {
             }
         }
 
-        int size() {
-            int count = 0;
-
-            node temp = head;
-            while (temp != null) {
-                count++;
-                temp = temp.next;
-            }
-            return count;
-        }
 
         void addAtBegin(int data) {
             node newNode = new node(data);
@@ -54,6 +46,7 @@ public class implementationOfLL {
                 newNode.next = head;
                 head = newNode;
             }
+            size++;
         }
 
         void reverse() {
@@ -66,6 +59,47 @@ public class implementationOfLL {
             reverse2(head.next);
             System.out.print(head.data + " ");
         }
+
+        void insert(int id, int value) {
+            node newNode = new node(value);
+            node temp = head;
+
+            if (id == this.size) {
+                add(value);
+                return;
+            } else if (id == 0) {
+                addAtBegin(value);
+                return;
+            }
+
+            for (int i = 0; i < id - 1; i++) {
+                temp = temp.next;
+            }
+            newNode.next = temp.next;
+            temp.next = newNode;
+            size++;
+        }
+
+        int getElement(int idx) {
+            if (idx >= this.size || idx < 0) {
+                return -1;
+            }
+            node temp = head;
+            for (int i = 0; i < idx; i++) {
+                temp = temp.next;
+            }
+            return temp.data;
+        }
+
+        void remove(int idx) {
+            node temp = head;
+            for (int i = 0; i < idx - 1; i++) {
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            size--;
+        }
+
     }
 
     public static void main(String[] args) {
@@ -75,10 +109,18 @@ public class implementationOfLL {
         list.add(20);
         list.add(40);
         list.add(30);
-        list.addAtBegin(1000);
+//        list.addAtBegin(1000);
+//        list.insert(1, 2000);
+//        System.out.println();
+//        list.reverse();
         list.display();
         System.out.println();
-        list.reverse();
-        System.out.println("\nsize of LL: " + list.size());
+        list.remove(2);
+        System.out.println(list.tail.data);
+        list.display();
+
+        System.out.println("\nsize of LL: " + list.size);
+        System.out.println(list.getElement(5));
+
     }
 }
