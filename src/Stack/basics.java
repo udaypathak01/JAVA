@@ -1,19 +1,25 @@
 package Stack;
 
-import java.util.Scanner;
+
 import java.util.Stack;
 
 public class basics {
     public static void main(String[] args) {
-        Scanner s=new Scanner(System.in);
-        int n= s.nextInt();
-        Stack<Integer> sc = new Stack<>();
-        for (int i = 0; i <n ; i++) {
-            int value=s.nextInt();
-            sc.push(value);
+        Stack<Integer>stack=new Stack<>();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+
+        System.out.println(stack);
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack);
+        System.out.println(stack.peek());
+
+        for (int val:stack){
+            System.out.println(val);
         }
-        sc.pop();
-        sc.pop();
-        System.out.println(sc.peek());
     }
 }
