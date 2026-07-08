@@ -7,10 +7,10 @@ public class RotateArray {
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
         int d = 3;
         int n = arr.length - 1;
-//        write logic from here
-        reverse(arr, 0, n);
+
         reverse(arr, 0, n - d);
         reverse(arr, n - d + 1, n);
+        reverse(arr, 0, n);
 
         for (int k = 0; k < arr.length; k++) {
             System.out.print(arr[k] + " ");
